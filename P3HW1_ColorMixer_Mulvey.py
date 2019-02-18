@@ -4,7 +4,7 @@
 # 02/15/2019
 ###########################################
 print("*****This program displays the resulting color of mixing two primary colors together.*****")
-    # Tells the user what the code does\
+    # Tells the user what the code does
 
 print()
 
