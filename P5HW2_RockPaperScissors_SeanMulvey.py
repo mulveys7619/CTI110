@@ -107,10 +107,14 @@ def result():
         return draw_total, win_total, loss_total
 
         
+def total ():
+    print("  Wins   Losses   Draws \n ------------------------- \n   ", win_total,"    ", loss_total,"      ",draw_total,)
 
-    
+    print()
 
-keep_going = input("Wins   Losses   Draws \n ------------------------- \n", win_total,"   ", loss_total,"   ",draw_total,"Would you like to play?[Y/N]: ").upper()
+
+
+keep_going = input("Would you like to play?[Y/N]: ").upper()
         # Asks user if they want to play
         
 while keep_going == "Y":
@@ -147,14 +151,12 @@ while keep_going == "Y":
 
 draw_total, win_total, loss_total= result()# Ends the result definition
 
-    
+
+
+total()
+
 print("OK")
         # Displays if the user says they don't want to play
 
-def total():
-
-    print("Okay")
-
-total()
 
 
