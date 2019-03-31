@@ -1,5 +1,5 @@
 # Creates a game of rock, paper, scissors
-# 03/25/2019
+# 03/30/2019
 # CTI-110 P5HW2-Rock, Paper, Scissors Game
 # Sean Mulvey
 #################################################################################################
@@ -16,23 +16,23 @@ draw_total = 0
 
 
 def random_number():
-            # This definition creates a random number
+                # This definition creates a random number
 
     comp_hand = random.randint(1,3)
-            # Sets comp_hand equal to a random number between 1 and 3
+                # Sets comp_hand equal to a random number between 1 and 3
 
     return comp_hand
-            # Tells the program I am going to use comp_hand in another definition
+                # Tells the program I am going to use comp_hand in another definition
     
 def user_input():
-            # This definiton receives the choice the user makes
+                # This definiton receives the choice the user makes
         
 
     user_hand =input("Please choose Rock, Paper, or Scissors: ").upper()
-            # Asks user to choose ROCK, PAPER, or SCISSORS
+                # Asks user to choose ROCK, PAPER, or SCISSORS
 
     return user_hand
-            # Tells the program I'm going to use user_hand in another definition
+                # Tells the program I'm going to use user_hand in another definition
 
 def action():
                 # This definiton displays what the computer chose
@@ -59,6 +59,10 @@ def result():
         if user_hand == "ROCK" and comp_hand == 2:
             print("PAPER covers ROCK. THE COMPUTER WINS!")
                 # Displays result if user chose ROCK and computer chose PAPER
+
+            global loss_total
+                # Allows me to use loss_total out side of the definition
+            
             loss_total += 1
             
             
@@ -66,6 +70,10 @@ def result():
         elif user_hand == "ROCK" and comp_hand == 3:
             print("ROCK crushes SCISSORS. YOU WIN!")
                 # Displays result if user chose ROCK and computer chose SCISSORS
+
+            global win_total
+                # Allows me to use win_total out side of the definition
+        
             win_total += 1
             
                     
@@ -100,6 +108,9 @@ def result():
             print("Its a draw. Please try again.")
                 # Displays a draw if the user and computer have the same result
 
+            global draw_total
+                # Allows me to use draw_total out side of the definition
+
             draw_total += 1
 
             print()
@@ -108,17 +119,21 @@ def result():
 
         
 def total ():
+
+
     print("  Wins   Losses   Draws \n ------------------------- \n   ", win_total,"    ", loss_total,"      ",draw_total,)
+            # Display the users win/loss/draw record
+
 
     print()
 
 
 
 keep_going = input("Would you like to play?[Y/N]: ").upper()
-        # Asks user if they want to play
+            # Asks user if they want to play
         
 while keep_going == "Y":
-        # Starts loop if users inputs "Y"
+            # Starts loop if users inputs "Y"
 
     print()
 
@@ -140,7 +155,7 @@ while keep_going == "Y":
                         
 
     action()
-                    # Ends the definition
+                    # Ends the action definition
 
     print()
 
@@ -149,14 +164,15 @@ while keep_going == "Y":
             
             
 
-draw_total, win_total, loss_total= result()# Ends the result definition
+    draw_total, win_total, loss_total = result()# Ends the result definition
+                    # Sets result definition equal to draw_total, win_total, and loss_total
+    
+    print()
 
+    
 
-
-total()
+    total()
+                    # Ends total definition
 
 print("OK")
         # Displays if the user says they don't want to play
-
-
-
